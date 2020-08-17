@@ -1,0 +1,27 @@
+project_name: Simple_model  # Name of the project
+data_files:  # Location of the data files
+  raster_file_folder: "G:/My Drive/dev/2020-project_repos/rwm_repo/data/190923_Task1_LSSR"
+  raster_filenames: {"top_surface": "LSSR_Top_Surface.asc",
+                     "soil_layer": "LSSR_Soil.asc",
+                     "top_chalk": "LSSR_Top_Chalk.asc",
+                     "middle_chalk": "LSSR_Middle_Chalk.asc",
+                     "basal_chalk": "LSSR_Basal_Chalk.asc",
+                     "bottom_surface": "LSSR_Bottom_Surface.asc",
+                     "river": "LSSR_Top_Surface.asc",
+                    }
+  igp_project_folder: "G:/My Drive/dev/2020-project_repos/rwm_repo/data/GiD_models/LSSR-add_river-full-mesh-coarser-120820.gid"
+  recharge_file: "G:/My Drive/dev/2020-project_repos/rwm_repo/data/190923_Task1_LSSR/recharge.asc"
+
+general:
+  multiprocessing: True
+  num_of_processes: 8
+
+raster_refinement:  # Options of the raster refinement algorithm
+  write_non_refined_csv: True
+  write_csv: True
+  regions: ["top_surface", "soil_layer", "top_chalk", "basal_chalk", "middle_chalk", "bottom_surface", "river"]
+
+implicit_to_explicit:  # Options of the implicit to explicit mesh converter
+#  write_csv: True
+  write_hdf5: True
+
